@@ -223,7 +223,7 @@ const Countries: React.FC<CountriesProps> = ({ language }) => {
       <div className={`max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 ${isRTL ? 'rtl' : ''}`}>
         <div className={`text-center mb-16 ${isRTL ? 'text-right sm:text-center' : ''}`}>
           <div className={`flex items-center justify-center mb-4 ${isRTL ? 'flex-row-reverse' : ''}`}>
-            <Globe size={32} className={`text-blue-600 ${isRTL ? 'ml-3' : 'mr-3'}`} />
+            <Globe size={32} className={`text-brand-secondary ${isRTL ? 'ml-3' : 'mr-3'}`} />
             <h2 className={`text-3xl sm:text-4xl font-bold text-gray-900 ${isRTL ? 'font-medium' : ''}`}>
               {t.countries.title}
             </h2>
@@ -235,9 +235,9 @@ const Countries: React.FC<CountriesProps> = ({ language }) => {
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           {/* Sending Countries */}
-          <div className="bg-white rounded-2xl p-8 shadow-lg border-l-4 border-blue-500">
+          <div className="bg-white rounded-2xl p-8 shadow-lg border-l-4 border-brand-secondary">
             <div className={`flex items-center mb-4 ${isRTL ? 'flex-row-reverse' : ''}`}>
-              <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse mr-3"></div>
+              <div className="w-3 h-3 bg-brand-secondary rounded-full animate-pulse mr-3"></div>
               <h3 className={`text-xl font-bold text-gray-900 ${isRTL ? 'font-medium' : ''}`}>
                 {countryData.sendingTitle}
               </h3>
@@ -284,7 +284,7 @@ const Countries: React.FC<CountriesProps> = ({ language }) => {
         </div>
 
         {/* Get Started CTA */}
-        <div className="text-center bg-blue-50 rounded-2xl p-8 border border-blue-100">
+        <div className="text-center bg-brand-lighter rounded-2xl p-8 border border-brand-light">
           <h3 className={`text-xl font-bold text-gray-900 mb-4 ${isRTL ? 'font-medium' : ''}`}>
             {countryData.ctaTitle}
           </h3>

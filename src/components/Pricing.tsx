@@ -123,14 +123,14 @@ const Pricing: React.FC<PricingProps> = ({ language }) => {
           </div>
 
           {/* Exchange Rates */}
-          <div className="bg-blue-50 rounded-2xl p-8 text-center border-2 border-blue-200">
-            <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6">
+          <div className="bg-brand-lighter rounded-2xl p-8 text-center border-2 border-brand-muted">
+            <div className="w-16 h-16 bg-brand-secondary rounded-full flex items-center justify-center mx-auto mb-6">
               <TrendingUp size={32} className="text-white" />
             </div>
             <h3 className={`text-xl font-bold text-gray-900 mb-4 ${isRTL ? 'font-medium' : ''}`}>
               {t.pricing.rates.title}
             </h3>
-            <div className={`text-lg font-semibold text-blue-600 mb-2 ${isRTL ? 'font-medium' : ''}`}>
+            <div className={`text-lg font-semibold text-brand-secondary mb-2 ${isRTL ? 'font-medium' : ''}`}>
               {content.realTime}
             </div>
             <p className={`text-gray-600 ${isRTL ? 'text-right sm:text-center' : ''}`}>

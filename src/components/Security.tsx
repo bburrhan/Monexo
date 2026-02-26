@@ -40,9 +40,9 @@ const Security: React.FC<SecurityProps> = ({ language }) => {
       icon: Shield,
       title: t.security.encryption.title,
       description: t.security.encryption.description,
-      color: 'bg-blue-500',
-      bgColor: 'bg-blue-50',
-      textColor: 'text-blue-600'
+      color: 'bg-brand-secondary',
+      bgColor: 'bg-brand-lighter',
+      textColor: 'text-brand-secondary'
     },
     {
       icon: FileCheck,
@@ -67,7 +67,7 @@ const Security: React.FC<SecurityProps> = ({ language }) => {
       <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${isRTL ? 'rtl' : ''}`}>
         <div className={`text-center mb-16 ${isRTL ? 'text-right sm:text-center' : ''}`}>
           <div className={`flex items-center justify-center mb-4 ${isRTL ? 'flex-row-reverse' : ''}`}>
-            <Shield size={32} className={`text-blue-600 ${isRTL ? 'ml-3' : 'mr-3'}`} />
+            <Shield size={32} className={`text-brand-secondary ${isRTL ? 'ml-3' : 'mr-3'}`} />
             <h2 className={`text-3xl sm:text-4xl font-bold text-gray-900 ${isRTL ? 'font-medium' : ''}`}>
               {t.security.title}
             </h2>

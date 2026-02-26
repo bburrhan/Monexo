@@ -105,8 +105,8 @@ const SocialProof: React.FC<SocialProofProps> = ({ language }) => {
             const Icon = metric.icon;
             return (
               <div key={index} className={`text-center ${isRTL ? 'text-right sm:text-center' : ''}`}>
-                <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Icon size={32} className="text-blue-600" />
+                <div className="w-16 h-16 bg-brand-lighter rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Icon size={32} className="text-brand-secondary" />
                 </div>
                 <div className={`text-3xl font-bold text-gray-900 mb-2 ${isRTL ? 'font-medium' : ''}`}>
                   {metric.value}

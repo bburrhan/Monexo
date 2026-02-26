@@ -43,16 +43,16 @@ const Header: React.FC<HeaderProps> = ({ language }) => {
           
           {/* Navigation */}
           <nav className={`hidden md:flex items-center space-x-8 ${isRTL ? 'flex-row-reverse space-x-reverse' : ''}`}>
-            <a href="#how-it-works" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
+            <a href="#how-it-works" className="text-gray-700 hover:text-brand-secondary transition-colors font-medium">
               {t.header.navigation.howItWorks}
             </a>
-            <a href="#countries" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
+            <a href="#countries" className="text-gray-700 hover:text-brand-secondary transition-colors font-medium">
               {t.header.navigation.countries}
             </a>
-            <a href="#pricing" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
+            <a href="#pricing" className="text-gray-700 hover:text-brand-secondary transition-colors font-medium">
               {t.header.navigation.pricing}
             </a>
-            <a href="#faq" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
+            <a href="#faq" className="text-gray-700 hover:text-brand-secondary transition-colors font-medium">
               {t.header.navigation.help}
             </a>
           </nav>

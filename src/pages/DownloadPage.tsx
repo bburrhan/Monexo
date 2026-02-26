@@ -41,7 +41,7 @@ const DownloadPage: React.FC<DownloadPageProps> = ({ language }) => {
         <Header language={language} />
 
         <main className="pt-16">
-          <section className="py-20 bg-gradient-to-br from-blue-600 to-blue-800 text-white">
+          <section className="py-20 bg-gradient-to-br from-brand-primary to-brand-dark text-white">
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-pulse">
               <div className="w-20 h-20 bg-white/20 rounded-full mx-auto mb-8"></div>
               <div className="h-12 bg-white/20 rounded mb-6 w-3/4 mx-auto"></div>
@@ -92,10 +92,10 @@ const DownloadPage: React.FC<DownloadPageProps> = ({ language }) => {
       <Header language={language} />
 
       <main className="pt-16">
-        <section className="relative py-20 bg-gradient-to-br from-blue-600 to-blue-800 text-white overflow-hidden">
+        <section className="relative py-20 bg-gradient-to-br from-brand-primary to-brand-dark text-white overflow-hidden">
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-20 left-10 w-32 h-32 bg-white rounded-full blur-3xl"></div>
-            <div className="absolute top-40 right-20 w-48 h-48 bg-blue-300 rounded-full blur-3xl"></div>
+            <div className="absolute top-40 right-20 w-48 h-48 bg-brand-secondary rounded-full blur-3xl"></div>
             <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-white rounded-full blur-3xl"></div>
           </div>
 
@@ -108,7 +108,7 @@ const DownloadPage: React.FC<DownloadPageProps> = ({ language }) => {
               {t.downloadPage.hero.title}
             </h1>
 
-            <p className={`text-xl sm:text-2xl text-blue-100 mb-8 max-w-3xl mx-auto ${isRTL ? 'text-right sm:text-center' : ''}`}>
+            <p className={`text-xl sm:text-2xl text-brand-muted mb-8 max-w-3xl mx-auto ${isRTL ? 'text-right sm:text-center' : ''}`}>
               {t.downloadPage.hero.subtitle}
             </p>
 
@@ -140,7 +140,7 @@ const DownloadPage: React.FC<DownloadPageProps> = ({ language }) => {
               </a>
             </div>
 
-            <div className={`flex items-center justify-center space-x-6 text-blue-100 ${isRTL ? 'flex-row-reverse space-x-reverse' : ''}`}>
+            <div className={`flex items-center justify-center space-x-6 text-brand-muted ${isRTL ? 'flex-row-reverse space-x-reverse' : ''}`}>
               <div className={`flex items-center space-x-2 ${isRTL ? 'flex-row-reverse space-x-reverse' : ''}`}>
                 <Star size={16} className="text-yellow-400 fill-current" />
                 <span className="text-sm">4.9 {t.downloadPage.rating}</span>
@@ -172,8 +172,8 @@ const DownloadPage: React.FC<DownloadPageProps> = ({ language }) => {
                     key={index}
                     className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100"
                   >
-                    <div className={`w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 ${isRTL ? 'mr-auto' : ''}`}>
-                      <Icon size={32} className="text-blue-600" />
+                    <div className={`w-16 h-16 bg-brand-lighter rounded-2xl flex items-center justify-center mb-6 ${isRTL ? 'mr-auto' : ''}`}>
+                      <Icon size={32} className="text-brand-secondary" />
                     </div>
                     <h3 className={`text-xl font-bold text-gray-900 mb-4 ${isRTL ? 'text-right font-medium' : ''}`}>
                       {feature.title}
@@ -213,12 +213,12 @@ const DownloadPage: React.FC<DownloadPageProps> = ({ language }) => {
           </div>
         </section>
 
-        <section className="py-20 bg-blue-600 text-white">
+        <section className="py-20 bg-brand-primary text-white">
           <div className={`max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center ${isRTL ? 'rtl' : ''}`}>
             <h2 className={`text-3xl sm:text-4xl font-bold mb-6 ${isRTL ? 'font-medium' : ''}`}>
               {t.downloadPage.cta.title}
             </h2>
-            <p className={`text-xl text-blue-100 mb-8 ${isRTL ? 'text-right sm:text-center' : ''}`}>
+            <p className={`text-xl text-brand-muted mb-8 ${isRTL ? 'text-right sm:text-center' : ''}`}>
               {t.downloadPage.cta.subtitle}
             </p>
 

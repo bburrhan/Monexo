@@ -46,7 +46,7 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ currentLanguage }) 
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center space-x-2 px-2 sm:px-3 py-2 rounded-lg bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+        className="flex items-center space-x-2 px-2 sm:px-3 py-2 rounded-lg bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors border border-gray-200 focus:ring-2 focus:ring-brand-secondary focus:border-transparent"
         aria-label="Select language"
       >
         <Globe size={16} />
@@ -62,7 +62,7 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ currentLanguage }) 
               key={language.code}
               onClick={() => handleLanguageChange(language.code)}
               className={`w-full text-left px-4 py-3 hover:bg-gray-50 transition-colors flex items-center space-x-3 ${
-                currentLanguage === language.code ? 'bg-blue-50 text-blue-600' : 'text-gray-700'
+                currentLanguage === language.code ? 'bg-brand-lighter text-brand-secondary' : 'text-gray-700'
               }`}
             >
               <span className="text-lg">{language.flag}</span>

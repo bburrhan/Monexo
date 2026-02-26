@@ -75,7 +75,7 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ language }) => {
             return (
               <div key={index} className={`text-center ${isRTL ? 'text-right sm:text-center' : ''}`}>
                 <div className="relative mb-8">
-                  <div className="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto shadow-lg">
+                  <div className="w-20 h-20 bg-brand-primary rounded-full flex items-center justify-center mx-auto shadow-lg">
                     <Icon size={32} className="text-white" />
                   </div>
                   {/* Number positioned to the left for LTR, right for RTL */}

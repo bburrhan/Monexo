@@ -90,7 +90,7 @@ const PrivacyPage: React.FC<PrivacyPageProps> = ({ language }) => {
         <section className="py-12 bg-gray-50">
           <div className={`max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 ${isRTL ? 'rtl' : ''}`}>
             <div className={`flex items-center justify-center mb-6 ${isRTL ? 'flex-row-reverse' : ''}`}>
-              <Shield size={32} className={`text-blue-600 ${isRTL ? 'ml-3' : 'mr-3'}`} />
+              <Shield size={32} className={`text-brand-secondary ${isRTL ? 'ml-3' : 'mr-3'}`} />
               <h1 className={`text-3xl sm:text-4xl font-bold text-gray-900 ${isRTL ? 'font-medium' : ''}`}>
                 {t.privacy.title}
               </h1>
@@ -235,8 +235,8 @@ const PrivacyPage: React.FC<PrivacyPageProps> = ({ language }) => {
                 <div className={`space-y-4 text-gray-700 ${isRTL ? 'text-right' : ''}`}>
                   <p>{t.privacy.sections.contact.content[0]}</p>
                   <div className={`flex items-center space-x-2 ${isRTL ? 'flex-row-reverse space-x-reverse justify-end' : ''}`}>
-                    <Mail size={20} className="text-blue-600" />
-                    <a href="mailto:privacy@monexo.ai" className="text-blue-600 hover:text-blue-700 font-medium">
+                    <Mail size={20} className="text-brand-secondary" />
+                    <a href="mailto:privacy@monexo.ai" className="text-brand-secondary hover:text-brand-primary font-medium">
                       privacy@monexo.ai
                     </a>
                   </div>

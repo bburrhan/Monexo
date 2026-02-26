@@ -180,7 +180,7 @@ const ExchangeCalculator: React.FC<ExchangeCalculatorProps> = ({ language }) => 
           <div className="relative">
             <button
               onClick={() => setShowFromDropdown(!showFromDropdown)}
-              className="w-full flex items-center justify-between p-3 bg-gray-50 hover:bg-gray-100 active:bg-gray-200 transition-colors rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full flex items-center justify-between p-3 bg-gray-50 hover:bg-gray-100 active:bg-gray-200 transition-colors rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand-secondary focus:border-transparent"
             >
               <label className={`text-sm font-medium text-gray-500 ${isRTL ? 'text-right' : ''}`}>
                 {t.calculator.from}
@@ -241,7 +241,7 @@ const ExchangeCalculator: React.FC<ExchangeCalculatorProps> = ({ language }) => 
           <div className="relative">
             <button
               onClick={() => setShowToDropdown(!showToDropdown)}
-              className="w-full flex items-center justify-between p-3 bg-gray-50 hover:bg-gray-100 active:bg-gray-200 transition-colors rounded-xl border border-gray-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full flex items-center justify-between p-3 bg-gray-50 hover:bg-gray-100 active:bg-gray-200 transition-colors rounded-xl border border-gray-200 focus:ring-2 focus:ring-brand-secondary focus:border-transparent"
             >
               <label className={`text-sm font-medium text-gray-500 ${isRTL ? 'text-right' : ''}`}>
                 {t.calculator.to}
@@ -275,12 +275,12 @@ const ExchangeCalculator: React.FC<ExchangeCalculatorProps> = ({ language }) => 
           </div>
           
           {/* Results Section */}
-          <div className="space-y-4 p-5 rounded-xl border-2 bg-gradient-to-br from-blue-50 to-sky-50 border-blue-200">
+          <div className="space-y-4 p-5 rounded-xl border-2 bg-gradient-to-br from-brand-lighter to-sky-50 border-brand-muted">
             <div className={`flex justify-between items-center text-sm ${isRTL ? 'flex-row-reverse' : ''}`}>
               <span className="text-gray-600 font-medium">{t.calculator.exchangeRate}</span>
               <div className={`flex items-center space-x-2 ${isRTL ? 'flex-row-reverse space-x-reverse' : ''}`}>
                 {isLoadingRates && (
-                  <div className="w-3 h-3 border border-blue-400 border-t-transparent rounded-full animate-spin"></div>
+                  <div className="w-3 h-3 border border-brand-secondary border-t-transparent rounded-full animate-spin"></div>
                 )}
                 <span className="font-bold text-gray-900 text-sm">
                   {exchangeRate > 0 ? (
@@ -302,7 +302,7 @@ const ExchangeCalculator: React.FC<ExchangeCalculatorProps> = ({ language }) => 
             </div>
             <div className={`flex justify-between items-center text-sm ${isRTL ? 'flex-row-reverse' : ''}`}>
               <span className="text-gray-600 font-medium">{t.calculator.estimatedDelivery}</span>
-              <span className="font-bold text-blue-600">2–5 min</span>
+              <span className="font-bold text-brand-secondary">2–5 min</span>
             </div>
           </div>
 

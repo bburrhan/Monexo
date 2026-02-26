@@ -61,7 +61,7 @@ const FAQ: React.FC<FAQProps> = ({ language }) => {
       <div className={`max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 ${isRTL ? 'rtl' : ''}`}>
         <div className={`text-center mb-16 ${isRTL ? 'text-right sm:text-center' : ''}`}>
           <div className={`flex items-center justify-center mb-4 ${isRTL ? 'flex-row-reverse' : ''}`}>
-            <HelpCircle size={32} className={`text-blue-600 ${isRTL ? 'ml-3' : 'mr-3'}`} />
+            <HelpCircle size={32} className={`text-brand-secondary ${isRTL ? 'ml-3' : 'mr-3'}`} />
             <h2 className={`text-3xl sm:text-4xl font-bold text-gray-900 ${isRTL ? 'font-medium' : ''}`}>
               {t.faq.title}
             </h2>
@@ -85,7 +85,7 @@ const FAQ: React.FC<FAQProps> = ({ language }) => {
                   {faq.question}
                 </h3>
                 {openIndex === index ? (
-                  <ChevronUp size={24} className="text-blue-600 flex-shrink-0" />
+                  <ChevronUp size={24} className="text-brand-secondary flex-shrink-0" />
                 ) : (
                   <ChevronDown size={24} className="text-gray-400 flex-shrink-0" />
                 )}
@@ -103,7 +103,7 @@ const FAQ: React.FC<FAQProps> = ({ language }) => {
         </div>
 
         {/* Contact Support */}
-        <div className="mt-16 text-center bg-blue-50 rounded-2xl p-8 border border-blue-100">
+        <div className="mt-16 text-center bg-brand-lighter rounded-2xl p-8 border border-brand-light">
           <h3 className={`text-xl font-bold text-gray-900 mb-4 ${isRTL ? 'font-medium' : ''}`}>
             {t.faq.support.title}
           </h3>
@@ -112,7 +112,7 @@ const FAQ: React.FC<FAQProps> = ({ language }) => {
           </p>
           <a
             href="mailto:support@monexo.ai"
-            className="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors font-medium shadow-lg"
+            className="inline-flex items-center bg-brand-primary text-white px-6 py-3 rounded-lg hover:bg-brand-dark transition-colors font-medium shadow-lg"
           >
             {t.faq.support.button}
           </a>

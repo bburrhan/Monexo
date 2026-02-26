@@ -13,7 +13,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
 
   if (loading || !t) {
     return (
-      <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-blue-600 to-blue-800">
+      <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-brand-primary to-brand-dark">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
           <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
             <div className="text-white space-y-8 animate-pulse">
@@ -45,7 +45,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-10 w-32 h-32 bg-white rounded-full blur-3xl"></div>
-        <div className="absolute top-40 right-20 w-48 h-48 bg-blue-300 rounded-full blur-3xl"></div>
+        <div className="absolute top-40 right-20 w-48 h-48 bg-brand-secondary rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-white rounded-full blur-3xl"></div>
       </div>
 
@@ -57,14 +57,14 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
               <h1 className={`text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight ${isRTL ? 'font-medium' : ''}`}>
                 {t.hero.tagline}
               </h1>
-              <p className={`text-xl sm:text-2xl text-blue-100 leading-relaxed ${isRTL ? 'font-normal' : ''}`}>
+              <p className={`text-xl sm:text-2xl text-brand-muted leading-relaxed ${isRTL ? 'font-normal' : ''}`}>
                 {t.hero.subtitle}
               </p>
             </div>
 
             {/* Trust Indicators */}
             <div className={`flex flex-wrap gap-6 pt-4 ${isRTL ? 'justify-end' : ''}`}>
-              <div className={`flex items-center space-x-2 text-blue-100 ${isRTL ? 'flex-row-reverse space-x-reverse' : ''}`}>
+              <div className={`flex items-center space-x-2 text-brand-muted ${isRTL ? 'flex-row-reverse space-x-reverse' : ''}`}>
                 <Shield size={20} />
                 <span className="text-sm font-medium">
                   {language === 'ur' ? 'محفوظ منتقلی' : 
@@ -76,11 +76,11 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
                    'Secure Transfers'}
                 </span>
               </div>
-              <div className={`flex items-center space-x-2 text-blue-100 ${isRTL ? 'flex-row-reverse space-x-reverse' : ''}`}>
+              <div className={`flex items-center space-x-2 text-brand-muted ${isRTL ? 'flex-row-reverse space-x-reverse' : ''}`}>
                 <Clock size={20} />
                 <span className="text-sm font-medium">{t.hero.instantTransfers}</span>
               </div>
-              <div className={`flex items-center space-x-2 text-blue-100 ${isRTL ? 'flex-row-reverse space-x-reverse' : ''}`}>
+              <div className={`flex items-center space-x-2 text-brand-muted ${isRTL ? 'flex-row-reverse space-x-reverse' : ''}`}>
                 <MessageCircle size={20} />
                 <span className="text-sm font-medium">{t.hero.mobileFirst}</span>
               </div>
@@ -97,7 +97,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
       {/* Disclaimer */}
       <div className={`relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 ${isRTL ? 'rtl' : ''}`}>
         <div className={`text-center ${isRTL ? 'text-right sm:text-center' : ''}`}>
-          <p className="text-sm text-blue-100 opacity-80">
+          <p className="text-sm text-brand-muted opacity-80">
             {t.hero.disclaimer}
           </p>
         </div>
