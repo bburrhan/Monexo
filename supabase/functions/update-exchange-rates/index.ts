@@ -7,70 +7,45 @@ const corsHeaders = {
   "Access-Control-Allow-Headers": "Content-Type, Authorization, X-Client-Info, Apikey",
 };
 
-interface DueMarketPair {
-  base: string;
-  quote: string;
-}
-
-interface DueMarketData {
-  pair: DueMarketPair;
+interface DueQuoteResponse {
+  currencyIn: string;
+  currencyOut: string;
+  amountIn: string;
+  amountOut: string;
   rate: number;
   markupBps: number;
-  updatedAt: string;
+  createdAt: string;
 }
 
-interface DueSingleRate {
-  pair: DueMarketPair;
-  rate: number;
-  markupBps: number;
-  updatedAt: string;
-}
-
-const DUE_API_BASE = "https://api.due.network/fx";
+const DUE_QUOTE_URL = "https://api.due.network/fx/quote";
 
 const SOURCE_CURRENCIES = ["USD", "AED", "SAR", "EUR", "GBP"];
 const TARGET_CURRENCIES = ["PHP", "PKR", "INR", "BDT", "IDR", "VND"];
 
-async function fetchAllMarkets(): Promise<Map<string, number>> {
-  const response = await fetch(`${DUE_API_BASE}/markets`, {
-    method: "GET",
-    headers: { accept: "application/json" },
-  });
-
-  if (!response.ok) {
-    throw new Error(`Due /markets returned status ${response.status}`);
-  }
-
-  const data: DueMarketData[] = await response.json();
-
-  if (!Array.isArray(data) || data.length === 0) {
-    throw new Error("No data received from Due /markets");
-  }
-
-  const rateMap = new Map<string, number>();
-  for (const market of data) {
-    if (market.pair?.base && market.pair?.quote && market.rate > 0) {
-      rateMap.set(`${market.pair.base}/${market.pair.quote}`, market.rate);
-    }
-  }
-
-  return rateMap;
-}
-
-async function fetchSingleRate(base: string, quote: string): Promise<number | null> {
+async function fetchQuoteRate(currencyIn: string, currencyOut: string): Promise<number | null> {
   try {
-    const response = await fetch(`${DUE_API_BASE}/markets/${base}/${quote}`, {
-      method: "GET",
-      headers: { accept: "application/json" },
+    const response = await fetch(DUE_QUOTE_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "accept": "application/json",
+      },
+      body: JSON.stringify({ currencyIn, currencyOut, amountIn: "1" }),
     });
 
-    if (!response.ok) return null;
+    if (!response.ok) {
+      console.warn(`Quote API returned ${response.status} for ${currencyIn}/${currencyOut}`);
+      return null;
+    }
 
-    const data: DueSingleRate = await response.json();
-    if (data?.rate > 0) return data.rate;
+    const data: DueQuoteResponse = await response.json();
+    const amountOut = parseFloat(data.amountOut);
 
-    return null;
-  } catch {
+    if (isNaN(amountOut) || amountOut <= 0) return null;
+
+    return amountOut;
+  } catch (err) {
+    console.warn(`Failed to fetch quote for ${currencyIn}/${currencyOut}:`, err);
     return null;
   }
 }
@@ -84,57 +59,42 @@ Deno.serve(async (req: Request) => {
   }
 
   try {
-    console.log("Starting exchange rate update from Due FX API (api.due.network)...");
+    console.log("Starting exchange rate update from Due FX Quote API...");
 
     const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
     const supabaseServiceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
     const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
-    const bulkRates = await fetchAllMarkets();
-    console.log(`Received ${bulkRates.size} pairs from /markets`);
-
-    const ratesToUpdate: { pair: string; rate: number }[] = [];
-    const missingPairs: { base: string; quote: string }[] = [];
-
+    const pairs: { source: string; target: string }[] = [];
     for (const source of SOURCE_CURRENCIES) {
       for (const target of TARGET_CURRENCIES) {
-        const key = `${source}/${target}`;
-        const reverseKey = `${target}/${source}`;
-
-        if (bulkRates.has(key)) {
-          ratesToUpdate.push({ pair: key, rate: bulkRates.get(key)! });
-        } else if (bulkRates.has(reverseKey)) {
-          ratesToUpdate.push({ pair: key, rate: 1 / bulkRates.get(reverseKey)! });
-        } else {
-          missingPairs.push({ base: source, quote: target });
-        }
+        pairs.push({ source, target });
       }
     }
 
-    if (missingPairs.length > 0) {
-      console.log(`Fetching ${missingPairs.length} cross-rates via single-pair endpoint...`);
+    console.log(`Fetching ${pairs.length} quote rates in parallel...`);
 
-      const results = await Promise.allSettled(
-        missingPairs.map(async ({ base, quote }) => {
-          const rate = await fetchSingleRate(base, quote);
-          if (rate) {
-            return { pair: `${base}/${quote}`, rate };
-          }
-          return null;
-        })
-      );
-
-      for (const result of results) {
-        if (result.status === "fulfilled" && result.value) {
-          ratesToUpdate.push(result.value);
+    const results = await Promise.allSettled(
+      pairs.map(async ({ source, target }) => {
+        const rate = await fetchQuoteRate(source, target);
+        if (rate !== null) {
+          return { pair: `${source}/${target}`, rate };
         }
+        return null;
+      })
+    );
+
+    const ratesToUpdate: { pair: string; rate: number }[] = [];
+    for (const result of results) {
+      if (result.status === "fulfilled" && result.value) {
+        ratesToUpdate.push(result.value);
       }
     }
 
-    console.log(`Found ${ratesToUpdate.length} rates out of ${SOURCE_CURRENCIES.length * TARGET_CURRENCIES.length} expected`);
+    console.log(`Received ${ratesToUpdate.length} valid rates out of ${pairs.length} requested`);
 
     if (ratesToUpdate.length === 0) {
-      throw new Error("No valid rates found to update");
+      throw new Error("No valid rates received from Quote API");
     }
 
     const updates = ratesToUpdate.map((item) => ({
@@ -153,7 +113,7 @@ Deno.serve(async (req: Request) => {
       throw new Error(`Failed to update database: ${upsertError.message}`);
     }
 
-    console.log(`Successfully updated ${ratesToUpdate.length} exchange rates`);
+    console.log(`Successfully updated ${ratesToUpdate.length} exchange rates via Quote API`);
 
     return new Response(
       JSON.stringify({
