@@ -1,5 +1,5 @@
 import React from 'react';
-import { MessageCircle, Edit, Send } from 'lucide-react';
+import { MessageCircle, CreditCard as Edit, Send } from 'lucide-react';
 import { useTranslations } from '../hooks/useTranslations';
 import { getWhatsAppURL } from '../utils/whatsapp';
 import { trackAddToCart } from '../utils/pixel';
