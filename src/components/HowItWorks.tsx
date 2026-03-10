@@ -2,6 +2,7 @@ import React from 'react';
 import { MessageCircle, Edit, Send } from 'lucide-react';
 import { useTranslations } from '../hooks/useTranslations';
 import { getWhatsAppURL } from '../utils/whatsapp';
+import { trackAddToCart } from '../utils/pixel';
 
 interface HowItWorksProps {
   language: string;
@@ -101,6 +102,7 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ language }) => {
             href={getWhatsAppURL(t.whatsappMessage)}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackAddToCart({ contentName: 'Money Transfer' })}
             className={`inline-flex items-center justify-center space-x-3 px-8 py-4 rounded-xl font-semibold text-lg text-white transition-all transform hover:scale-105 shadow-lg bg-green-500 hover:bg-green-600 ${isRTL ? 'flex-row-reverse space-x-reverse' : ''}`}
           >
             <MessageCircle size={24} />
