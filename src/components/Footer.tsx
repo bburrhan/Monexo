@@ -98,7 +98,6 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
             <ul className="space-y-3">
               <li><a href={`/${language}/privacy`} className="text-gray-300 hover:text-white transition-colors">{t.footer.sections.legal.privacyPolicy}</a></li>
               <li><a href={`/${language}/terms`} className="text-gray-300 hover:text-white transition-colors">{t.footer.sections.legal.termsOfService}</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">{t.footer.sections.legal.compliance}</a></li>
             </ul>
           </div>
         </div>
