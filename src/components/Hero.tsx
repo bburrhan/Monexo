@@ -33,7 +33,7 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
   }
 
   return (
-    <section className="relative min-h-screen overflow-hidden">
+    <section id="calculator" className="relative min-h-screen overflow-hidden">
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"

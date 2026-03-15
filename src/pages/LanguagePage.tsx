@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import Benefits from '../components/Benefits';
@@ -17,11 +18,21 @@ interface LanguagePageProps {
 }
 
 const LanguagePage: React.FC<LanguagePageProps> = ({ language }) => {
-  // Ensure the language exists in translations, fallback to English
   const { t, loading } = useTranslations(language);
   const currentLanguage = language;
   const isRTL = currentLanguage === 'ur' || currentLanguage === 'ar';
-  
+  const { hash } = useLocation();
+
+  useEffect(() => {
+    if (hash && !loading) {
+      const id = hash.replace('#', '');
+      const el = document.getElementById(id);
+      if (el) {
+        setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 100);
+      }
+    }
+  }, [hash, loading]);
+
   useEffect(() => {
     // Update document language and direction
     document.documentElement.lang = currentLanguage;

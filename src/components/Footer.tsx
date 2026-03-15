@@ -1,5 +1,6 @@
 import React from 'react';
 import { Shield, Award, Globe } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useTranslations } from '../hooks/useTranslations';
 
 interface FooterProps {
@@ -74,10 +75,10 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
           <div className={isRTL ? 'text-right' : ''}>
             <h3 className={`text-lg font-semibold mb-4 ${isRTL ? 'font-medium' : ''}`}>{t.footer.sections.product.title}</h3>
             <ul className="space-y-3">
-              <li><a href={`/${language}#how-it-works`} className="text-gray-300 hover:text-white transition-colors">{t.footer.sections.product.howItWorks}</a></li>
-              <li><a href={`/${language}#pricing`} className="text-gray-300 hover:text-white transition-colors">{t.footer.sections.product.pricing}</a></li>
-              <li><a href={`/${language}#countries`} className="text-gray-300 hover:text-white transition-colors">{t.footer.sections.product.countries}</a></li>
-              <li><a href={`/${language}#calculator`} className="text-gray-300 hover:text-white transition-colors">{t.footer.sections.product.exchangeRates}</a></li>
+              <li><Link to={`/${language}#how-it-works`} className="text-gray-300 hover:text-white transition-colors">{t.footer.sections.product.howItWorks}</Link></li>
+              <li><Link to={`/${language}#pricing`} className="text-gray-300 hover:text-white transition-colors">{t.footer.sections.product.pricing}</Link></li>
+              <li><Link to={`/${language}#countries`} className="text-gray-300 hover:text-white transition-colors">{t.footer.sections.product.countries}</Link></li>
+              <li><Link to={`/${language}#calculator`} className="text-gray-300 hover:text-white transition-colors">{t.footer.sections.product.exchangeRates}</Link></li>
             </ul>
           </div>
 
