@@ -241,7 +241,7 @@ export const tl: Translations = {
     },
     compliance: {
       title: "Regulatory Compliance",
-      description: "Nakikipagtulungan kami sa mga licensed financial partners na sumusunod sa lahat ng regulatory requirements at nagmamaintain ng transparency standards."
+      description: "Nakikipag-partner kami sa trusted at licensed financial institutions para masigurong compliant sa regulations at transparent ang aming serbisyo"
     },
     partners: {
       title: "Trusted Partners",
