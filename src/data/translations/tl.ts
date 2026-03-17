@@ -14,8 +14,8 @@ export const tl: Translations = {
   benefits: {
     title: "Bakit Monexo ang Best Choice para sa Iyong Remittance?",
     zeroFees: {
-      title: "Zero Fees Magpakailanman",
-      description: "Walang nakatagong bayad, walang transfer fee, walang sorpresa. Magpadala ng pera sa bahay nang hindi nawawala kahit piso sa fees."
+      title: "Send Money, Zero Fees",
+      description: "Magpadala ng pera sa pamilya - walang dagdag na bayad, kahit piso, safe na safe!"
     },
     fastTransfers: {
       title: "Napakabilis",
