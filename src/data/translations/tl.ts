@@ -200,8 +200,8 @@ export const tl: Translations = {
     downloads: "downloads"
   },
   countries: {
-    title: "Mga Suportadong Bansa",
-    subtitle: "Magpadala ng pera sa inyong mga mahal sa buhay sa Asia at higit pa",
+    title: "Supported Countries",
+    subtitle: "Mag-transfer ng pera sa Asia at iba pa, mabilis at safe",
     pilot: {
       title: "Pilot Program",
       description: "Available sa ngayon sa UAE, Saudi Arabia, EU, at UK"
