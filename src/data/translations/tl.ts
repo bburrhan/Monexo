@@ -12,7 +12,7 @@ export const tl: Translations = {
     disclaimer: "Libreng transfer monthly, hanggang USD 800 - send now!"
   },
   benefits: {
-    title: "Bakit Piliin ang Monexo?",
+    title: "Bakit Monexo ang Best Choice para sa Iyong Remittance?",
     zeroFees: {
       title: "Zero Fees Magpakailanman",
       description: "Walang nakatagong bayad, walang transfer fee, walang sorpresa. Magpadala ng pera sa bahay nang hindi nawawala kahit piso sa fees."
