@@ -99,7 +99,7 @@ export const tl: Translations = {
     },
     support: {
       title: "May iba ka pa bang gustong malaman?",
-      subtitle: "Ang aming support team ay nandito para tumulong sa inyo 24/7",
+      subtitle: "Available ang support team namin 24/7 para tulungan ka.",
       button: "Makipag-ugnayan sa Support"
     }
   },
