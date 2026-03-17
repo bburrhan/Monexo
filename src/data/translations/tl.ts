@@ -234,7 +234,7 @@ export const tl: Translations = {
   },
   security: {
     title: "Ang Inyong Security ay Aming Priority",
-    subtitle: "Gumagamit kami ng industry-leading security measures para protektahan ang inyong pera at data",
+    subtitle: "Pinoprotektahan namin ang inyong pera at data gamit ang industry-leading security technology.",
     encryption: {
       title: "End-to-End Encryption",
       description: "Lahat ng data ay naka-encrypt gamit ang bank-grade security protocols para masiguro na private at secure ang inyong information."
