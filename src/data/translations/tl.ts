@@ -217,8 +217,8 @@ export const tl: Translations = {
     }
   },
   pricing: {
-    title: "Simple, Transparent na Pricing",
-    subtitle: "Walang nakatagong fees, walang sorpresa. Honest pricing lang.",
+    title: "Simple, Transparent Pricing",
+    subtitle: "Walang hidden fees, walang hassle, just honest pricing",
     transfers: {
       title: "Money Transfers",
       fee: "LIBRE"
