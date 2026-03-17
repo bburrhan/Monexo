@@ -91,7 +91,7 @@ export const tl: Translations = {
     },
     q5: {
       question: "Kailangan ko bang mag-download ng app?",
-      answer: "Hindi kailangan mag-download ng app! Lahat ay gumagana sa WhatsApp, na meron na kayo sa inyong phone."
+      answer: "Hindi mo na kailangan mag-download ng app! Pwede mong gawin lahat ng transfers direkta sa WhatsApp, na meron ka na sa phone mo."
     },
     q6: {
       question: "Anong information ang kailangan ko para magpadala ng pera?",
