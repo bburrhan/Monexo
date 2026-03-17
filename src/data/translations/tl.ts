@@ -38,8 +38,8 @@ export const tl: Translations = {
       description: "I-verify namin ang inyong identity at i-confirm ang transfer amount"
     },
     step3: {
-      title: "Nadeliver na ang Pera",
-      description: "Nakakakuha agad ng pera ang inyong recipient, may real-time notifications"
+      title: "Money Delivered",
+      description: "Instant na matatanggap ng recipient ang pera, with real-time notifications para sa'yo"
     },
     flowStep1: "Message",
     flowStep2: "I-verify",
