@@ -100,7 +100,7 @@ export const tl: Translations = {
     support: {
       title: "May iba ka pa bang gustong malaman?",
       subtitle: "Available ang support team namin 24/7 para tulungan ka.",
-      button: "Makipag-ugnayan sa Support"
+      button: "I-chat ang Support"
     }
   },
   footer: {
