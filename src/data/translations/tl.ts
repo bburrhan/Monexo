@@ -95,7 +95,7 @@ export const tl: Translations = {
     },
     q6: {
       question: "Anong details ang kailangan para magpadala ng pera gamit ang Monexo?",
-      answer: "Kailangan ninyo ng full name, phone number, at bank account details ng inyong recipient. Gagabayan namin kayo step by step sa proseso."
+      answer: "Ihanda lang ang recipient's full name, phone number, at bank account details. May step-by-step guidance kami para smooth at secure ang transfer."
     },
     support: {
       title: "May mga tanong pa?",
