@@ -245,7 +245,7 @@ export const tl: Translations = {
     },
     partners: {
       title: "Trusted Partners",
-      description: "Lahat ng transactions ay pinoproseso sa pamamagitan ng mga established, licensed financial institutions na may proven track records."
+      description: "Lahat ng transactions ay dumadaan sa trusted at licensed financial institutions na may proven track record"
     }
   },
   calculator: {
