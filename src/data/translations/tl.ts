@@ -18,8 +18,8 @@ export const tl: Translations = {
       description: "Magpadala ng pera sa pamilya - walang dagdag na bayad, kahit piso, safe na safe!"
     },
     fastTransfers: {
-      title: "Napakabilis",
-      description: "Ang pera ay naaabot ng inyong mga mahal sa buhay sa loob ng ilang minuto, hindi araw. Real-time notifications ay nagpapaalam sa lahat."
+      title: "Super Fast, Super Easy",
+      description: "Magpadala ng pera sa pamilya nang mabilis at hassle-free - real-time notifications included"
     },
     easyToUse: {
       title: "Simple at Secure",
