@@ -27,8 +27,8 @@ export const tl: Translations = {
     }
   },
   howItWorks: {
-    title: "Paano Ito Gumagana",
-    subtitle: "Magpadala ng pera sa bahay sa tatlong simpleng hakbang",
+    title: "How It Works",
+    subtitle: "Mag-send ng pera sa pamilya sa 3 easy steps.",
     step1: {
       title: "Mag-message sa Amin",
       description: "Simulan ang pag-uusap sa WhatsApp kasama ang inyong transfer details"
