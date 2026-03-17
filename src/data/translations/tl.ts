@@ -104,7 +104,7 @@ export const tl: Translations = {
     }
   },
   footer: {
-    tagline: "Zero-fee na remittance sa WhatsApp. Mabilis, transparent at secure - pinoproseso ng mga licensed financial partners.",
+    tagline: "Zero-fee na remittance sa WhatsApp. Mabilis, transparent, at secure - processed by licensed financial partners",
     copyright: "© 2025 Monexo. Lahat ng karapatan ay nakalaan.",
     compliance: "Ang Monexo ay nagfafacilitate ng money transfers sa pamamagitan ng licensed partners. Lahat ng transactions ay pinoproseso ng regulated financial institutions.",
     sections: {
