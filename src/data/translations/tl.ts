@@ -23,7 +23,7 @@ export const tl: Translations = {
     },
     easyToUse: {
       title: "Simple at Secure",
-      description: "Magpadala ng pera na kasing dali ng pagpapadala ng mensahe. Bank-level security ang nagpoprotekta sa bawat transaksyon."
+      description: "Magpadala ng pera kasing dali ng chat. Lahat ng transactions, safe at protected ng bank-level security."
     }
   },
   howItWorks: {
