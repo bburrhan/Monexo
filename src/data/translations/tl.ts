@@ -94,7 +94,7 @@ export const tl: Translations = {
       answer: "Hindi mo na kailangan mag-download ng app! Pwede mong gawin lahat ng transfers direkta sa WhatsApp, na meron ka na sa phone mo."
     },
     q6: {
-      question: "Anong information ang kailangan ko para magpadala ng pera?",
+      question: "Anong details ang kailangan para magpadala ng pera gamit ang Monexo?",
       answer: "Kailangan ninyo ng full name, phone number, at bank account details ng inyong recipient. Gagabayan namin kayo step by step sa proseso."
     },
     support: {
