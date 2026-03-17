@@ -83,7 +83,7 @@ export const tl: Translations = {
     },
     q3: {
       question: "Gaano kabilis ang transfers?",
-      answer: "Karamihan sa mga transfer ay natapos sa loob ng 2-5 minuto. Sa rare cases, maaaring umabot ng 24 oras dahil sa banking hours o additional verification requirements."
+      answer: "Karamihan sa transfers ay instant—usually 2–5 minutes lang. Sa rare cases, pwedeng umabot ng hanggang 24 hours depende sa banking hours o extra verification."
     },
     q4: {
       question: "Anong mga bansa ang sinusuportahan ninyo?",
