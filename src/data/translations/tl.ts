@@ -98,7 +98,7 @@ export const tl: Translations = {
       answer: "Ihanda lang ang recipient's full name, phone number, at bank account details. May step-by-step guidance kami para smooth at secure ang transfer."
     },
     support: {
-      title: "May mga tanong pa?",
+      title: "May iba ka pa bang gustong malaman?",
       subtitle: "Ang aming support team ay nandito para tumulong sa inyo 24/7",
       button: "Makipag-ugnayan sa Support"
     }
