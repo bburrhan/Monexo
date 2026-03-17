@@ -71,8 +71,8 @@ export const tl: Translations = {
     }
   },
   faq: {
-    title: "Mga Madalas na Tanong",
-    subtitle: "Lahat ng kailangan ninyong malaman tungkol sa Monexo",
+    title: "Mga Madalas na Tanong (FAQs)",
+    subtitle: "Lahat ng dapat ninyong malaman tungkol sa Monexo",
     q1: {
       question: "Paano nag-offer ng zero fees ang Monexo?",
       answer: "Lahat ay nakakakuha ng isang libreng transfer bawat buwan (hanggang USD 800). Nakikipag-partner kami sa mga licensed financial institutions at gumagamit ng technology para mabawasan ang mga gastos. Para sa karagdagang transfers, kumikita kami sa competitive exchange rates habang nag-o-offer pa rin ng mas magagandang rates kaysa sa traditional services."
