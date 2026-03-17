@@ -30,8 +30,8 @@ export const tl: Translations = {
     title: "How It Works",
     subtitle: "Mag-send ng pera sa pamilya sa 3 easy steps.",
     step1: {
-      title: "Mag-message sa Amin",
-      description: "Simulan ang pag-uusap sa WhatsApp kasama ang inyong transfer details"
+      title: "Message Us",
+      description: "Mag-chat sa WhatsApp at i-send ang transfer details"
     },
     step2: {
       title: "I-verify at I-confirm",
