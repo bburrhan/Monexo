@@ -54,7 +54,7 @@ export const tl: Translations = {
       location: "Dubai → Pilipinas"
     },
     testimonial2: {
-      text: "Sa wakas, may service na hindi nangsingil ng nakatagong fees. Transparent, mabilis, at maaasahan.",
+      text: "Finally, may remittance service na walang hidden fees. Transparent, mabilis, at super reliable pa!",
       author: "Maria Santos",
       location: "London → Pilipinas"
     },
