@@ -87,7 +87,7 @@ export const tl: Translations = {
     },
     q4: {
       question: "Saang bansa pwedeng mag-transfer gamit ang Monexo?",
-      answer: "Sa ngayon, sinusuportahan namin ang transfers mula sa UAE, Saudi Arabia, lahat ng bansang EU, at United Kingdom papunta sa Philippines, Pakistan, India, Bangladesh, Indonesia, at Vietnam. Palapalawak pa namin sa mas maraming bansa."
+      answer: "Puwede ka nang mag-transfer mula UAE, Saudi Arabia, lahat ng EU countries, at United Kingdom papunta sa Philippines, Pakistan, India, Bangladesh, Indonesia, at Vietnam. Mas maraming bansa pa ang idadagdag namin soon!"
     },
     q5: {
       question: "Kailangan ko bang mag-download ng app?",
