@@ -139,10 +139,10 @@ export const tl: Translations = {
   header: {
     downloadApp: "Simulang Magpadala",
     navigation: {
-      howItWorks: "Paano Ito Gumagana",
-      countries: "Mga Bansa",
+      howItWorks: "Paano Mag-Transfer",
+      countries: "Countries",
       pricing: "Pricing",
-      help: "Tulong"
+      help: "Help"
     }
   },
   phoneApp: {
