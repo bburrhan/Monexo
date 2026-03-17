@@ -46,8 +46,8 @@ export const tl: Translations = {
     flowStep3: "Nadeliver na"
   },
   testimonials: {
-    title: "Pinagkakatiwalaan ng Libu-libo",
-    subtitle: "Tingnan kung ano ang sinasabi ng aming mga customer tungkol sa kanilang experience",
+    title: "Trusted by Thousands",
+    subtitle: "Tingnan kung ano ang feedback ng mga customers tungkol sa kanilang experience",
     testimonial1: {
       text: "Nakatipid ako ng daan-daang piso sa fees dahil sa Monexo. Napakasimple ng proseso at nakakakuha agad ng pera ang pamilya ko.",
       author: "Ahmed Hassan",
