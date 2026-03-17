@@ -79,10 +79,10 @@ export const tl: Translations = {
     },
     q2: {
       question: "Safe ba ang pera ko sa Monexo?",
-      answer: "Oo. Lahat ng transactions ay pinoproseso ng mga regulated financial partners na may proper licenses. Gumagamit kami ng bank-level security at sumusunod sa international financial regulations."
+      answer: "Oo. Lahat ng transactions ay dumadaan sa licensed at regulated financial partners, gamit ang bank-level security at sumusunod sa international financial regulations para masigurong ligtas ang pera mo."
     },
     q3: {
-      question: "Gaano kabilis ang mga transfer?",
+      question: "Gaano kabilis ang transfers?",
       answer: "Karamihan sa mga transfer ay natapos sa loob ng 2-5 minuto. Sa rare cases, maaaring umabot ng 24 oras dahil sa banking hours o additional verification requirements."
     },
     q4: {
