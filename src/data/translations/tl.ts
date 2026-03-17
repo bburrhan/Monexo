@@ -9,7 +9,7 @@ export const tl: Translations = {
     trustText: "Pinagkakatiwalaan ng libu-libong tao sa buong mundo",
     instantTransfers: "Instant na Transfer",
     mobileFirst: "Mobile First",
-    disclaimer: "*Isang libreng transfer bawat buwan, hanggang sa maximum na USD 800."
+    disclaimer: "Libreng transfer monthly, hanggang USD 800 - send now!"
   },
   benefits: {
     title: "Bakit Piliin ang Monexo?",
