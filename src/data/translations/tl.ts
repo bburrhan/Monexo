@@ -137,7 +137,7 @@ export const tl: Translations = {
     }
   },
   header: {
-    downloadApp: "Simulang Magpadala",
+    downloadApp: "Transfer Now",
     navigation: {
       howItWorks: "Paano Mag-Transfer",
       countries: "Countries",
