@@ -59,7 +59,7 @@ export const tl: Translations = {
       location: "London → Pilipinas"
     },
     testimonial3: {
-      text: "Ang WhatsApp interface ay napakadaling gamitin. Nakakapagpadala ako ng pera habang nasa trabaho nang walang hassle.",
+      text: "Ang dali lang gamitin ng WhatsApp interface. Nakakapagpadala agad ako ng pera kahit nasa trabaho, walang hassle!",
       author: "Raj Patel",
       location: "UAE → India"
     },
