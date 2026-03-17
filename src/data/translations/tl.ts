@@ -4,7 +4,7 @@ export const tl: Translations = {
   whatsappMessage: "Hi, gusto kong magpadala ng pera sa Monexo. Pwede mo ba akong tulungan?",
   hero: {
     tagline: "Magpadala ng pera kahit saan sa 'Pinas, walang fee.",
-    subtitle: "Zero-fee na remittance sa WhatsApp. Mabilis, transparent at secure - pinoproseso ng mga licensed financial partners.",
+    subtitle: "Zero-fee na remittance sa WhatsApp. Mabilis, transparent, at secure - processed by licensed financial partners.",
     downloadButton: "Simulang Magpadala ng Pera",
     trustText: "Pinagkakatiwalaan ng libu-libong tao sa buong mundo",
     instantTransfers: "Instant na Transfer",
