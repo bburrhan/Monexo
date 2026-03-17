@@ -78,7 +78,7 @@ export const tl: Translations = {
       answer: "Bawat user ay may isang libreng transfer kada buwan (hanggang USD 800). Nakikipag-partner kami sa mga licensed financial institutions at gumagamit ng advanced technology para mabawasan ang gastos. Para sa mga dagdag na transfers, kumikita kami sa competitive exchange rates, pero mas maganda pa rin ang rates kumpara sa traditional services."
     },
     q2: {
-      question: "Safe ba ang aking pera sa Monexo?",
+      question: "Safe ba ang pera ko sa Monexo?",
       answer: "Oo. Lahat ng transactions ay pinoproseso ng mga regulated financial partners na may proper licenses. Gumagamit kami ng bank-level security at sumusunod sa international financial regulations."
     },
     q3: {
