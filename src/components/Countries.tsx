@@ -114,8 +114,8 @@ const Countries: React.FC<CountriesProps> = ({ language }) => {
           ],
           sendingDesc: 'Lahat ng GCC countries ay suportado kasama ang local currencies',
           receivingDesc: 'Instant transfers sa lahat ng major Asian destinations',
-          ctaTitle: 'Ready na ba Kayong Magpadala ng Pera?',
-          ctaDesc: 'Simulan ang pagpapadala ng pera sa inyong mga mahal sa buhay nang walang fees ngayon',
+          ctaTitle: 'Ready to Send Money?',
+          ctaDesc: 'Magpadala ng pera sa pamilya at friends nang walang fees ngayon!',
           ctaButton: 'Simulang Magpadala ng Pera'
         };
       case 'id':
