@@ -77,12 +77,12 @@ const SocialProof: React.FC<SocialProofProps> = ({ language }) => {
     },
     {
       icon: TrendingUp,
-      value: "$2M+",
+      value: "PHP 20M+",
       label: t.testimonials.metrics.moneySent
     },
     {
       icon: Award,
-      value: "4.9",
+      value: "4.8",
       label: t.testimonials.metrics.rating
     }
   ];

@@ -64,7 +64,7 @@ export const tl: Translations = {
       location: "UAE → India"
     },
     metrics: {
-      users: "Masayang Users",
+      users: "Happy Users",
       moneySent: "Napadala na Pera",
       countries: "Mga Bansa",
       rating: "Rating"
