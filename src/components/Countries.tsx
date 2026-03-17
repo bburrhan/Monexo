@@ -116,7 +116,7 @@ const Countries: React.FC<CountriesProps> = ({ language }) => {
           receivingDesc: 'Instant transfers sa lahat ng major Asian destinations',
           ctaTitle: 'Ready to Send Money?',
           ctaDesc: 'Magpadala ng pera sa pamilya at friends nang walang fees ngayon!',
-          ctaButton: 'Simulang Magpadala ng Pera'
+          ctaButton: 'Transfer Now'
         };
       case 'id':
         return {
