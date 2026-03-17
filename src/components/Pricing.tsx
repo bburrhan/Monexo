@@ -52,8 +52,8 @@ const Pricing: React.FC<PricingProps> = ({ language }) => {
         };
       case 'tl':
         return {
-          freeText: 'LIBRE',
-          alwaysForever: 'Lagi at magpakailanman*',
+          freeText: 'FREE',
+          alwaysForever: 'Always and forever*',
           realTime: 'Real-time',
           transparent: '100% Transparent'
         };
