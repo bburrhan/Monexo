@@ -49,7 +49,7 @@ export const tl: Translations = {
     title: "Trusted by Thousands",
     subtitle: "Tingnan kung ano ang feedback ng mga customers tungkol sa kanilang experience",
     testimonial1: {
-      text: "Nakatipid ako ng daan-daang piso sa fees dahil sa Monexo. Napakasimple ng proseso at nakakakuha agad ng pera ang pamilya ko.",
+      text: "Nakatipid ako sa fees dahil sa Monexo. Super fast at simple, at nakuha agad ng pamilya ko ang pera.",
       author: "Ahmed Hassan",
       location: "Dubai → Pilipinas"
     },
