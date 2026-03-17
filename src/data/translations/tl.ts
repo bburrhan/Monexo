@@ -256,8 +256,8 @@ export const tl: Translations = {
     transferFee: "Transfer Fee",
     recipientGets: "Makukuha ng Recipient",
     estimatedDelivery: "Estimated Delivery",
-    ratesDisclaimer: "Ang exchange rates ay naa-update in real-time at maaaring bahagyang mag-vary sa oras ng transfer.",
-    termsDisclaimer: "Sa pagpatuloy, sumasang-ayon kayo sa aming Terms & Conditions."
+    ratesDisclaimer: "Ang exchange rates ay updated in real-time at maaaring mag-iba sa oras ng transfer.",
+    termsDisclaimer: "Kung sumasang-ayon, magpatuloy sa aming Terms & Conditions."
   },
   terms: {
     title: "Mga Tuntunin at Kondisyon",
