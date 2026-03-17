@@ -110,9 +110,9 @@ export const tl: Translations = {
     sections: {
       product: {
         title: "Product",
-        howItWorks: "Paano Ito Gumagana",
+        howItWorks: "Paano Mag-Transfer",
         pricing: "Pricing",
-        countries: "Mga Bansa",
+        countries: "Countries",
         exchangeRates: "Exchange Rates"
       },
       support: {
