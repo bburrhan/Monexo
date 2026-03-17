@@ -133,7 +133,7 @@ export const tl: Translations = {
     trustIndicators: {
       security: "Bank-Level Security",
       licensed: "Licensed Partners",
-      countries: "15+ Bansa"
+      countries: "15+ Countries"
     }
   },
   header: {
