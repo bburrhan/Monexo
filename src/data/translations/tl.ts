@@ -118,7 +118,7 @@ export const tl: Translations = {
       support: {
         title: "Support",
         helpCenter: "Help Center",
-        contactUs: "Makipag-ugnayan sa Amin",
+        contactUs: "I-chat ang Support",
         trackTransfer: "I-track ang Transfer",
         reportIssue: "Mag-report ng Issue"
       },
