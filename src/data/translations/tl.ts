@@ -86,7 +86,7 @@ export const tl: Translations = {
       answer: "Karamihan sa transfers ay instant—usually 2–5 minutes lang. Sa rare cases, pwedeng umabot ng hanggang 24 hours depende sa banking hours o extra verification."
     },
     q4: {
-      question: "Anong mga bansa ang sinusuportahan ninyo?",
+      question: "Saang bansa pwedeng mag-transfer gamit ang Monexo?",
       answer: "Sa ngayon, sinusuportahan namin ang transfers mula sa UAE, Saudi Arabia, lahat ng bansang EU, at United Kingdom papunta sa Philippines, Pakistan, India, Bangladesh, Indonesia, at Vietnam. Palapalawak pa namin sa mas maraming bansa."
     },
     q5: {
