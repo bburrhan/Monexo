@@ -229,7 +229,7 @@ export const tl: Translations = {
     },
     guarantee: {
       title: "Price Guarantee",
-      description: "Ang nakikita ninyo ay ang babayaran ninyo - lagi"
+      description: "What you see is what you pay - always"
     }
   },
   security: {

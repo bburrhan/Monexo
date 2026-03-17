@@ -57,6 +57,7 @@ const Pricing: React.FC<PricingProps> = ({ language }) => {
           realTime: 'Real-time',
           transparent: '100% Transparent'
         };
+
       case 'id':
         return {
           freeText: 'GRATIS',
