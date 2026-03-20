@@ -24,7 +24,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({ language }) => {
     "name": "Monexo",
     "description": "Zero‑fee remittances on WhatsApp. Fast, transparent and secure - processed through licensed financial partners.",
     "url": "https://monexo.ai/",
-    "logo": "https://monexo.ai/Logo_Blue.svg",
+    "logo": "https://monexo.ai/Logo_Blue_new.png",
     "sameAs": [
       "https://wa.me/12083618992",
       "https://www.instagram.com/monexo",
@@ -64,14 +64,14 @@ const SEOHead: React.FC<SEOHeadProps> = ({ language }) => {
       <meta property="og:description" content="Zero‑fee remittances on WhatsApp. Fast, transparent and secure - processed through licensed financial partners." />
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://monexo.ai/" />
-      <meta property="og:image" content="https://monexo.ai/Logo_Blue.svg" />
+      <meta property="og:image" content="https://monexo.ai/Logo_Blue_new.png" />
       <meta property="og:locale" content={language} />
       
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="Send Money on WhatsApp - Always Free | Monexo" />
       <meta name="twitter:description" content="Zero‑fee remittances on WhatsApp. Fast, transparent and secure - processed through licensed financial partners." />
-      <meta name="twitter:image" content="https://monexo.ai/Logo_Blue.svg" />
+      <meta name="twitter:image" content="https://monexo.ai/Logo_Blue_new.png" />
       
       {/* Structured Data */}
       <script type="application/ld+json">

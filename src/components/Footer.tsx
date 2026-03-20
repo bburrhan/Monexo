@@ -40,9 +40,9 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
         <div className="grid md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className={`space-y-4 ${isRTL ? 'text-right' : ''}`}>
-            <img 
-              src="/Logo_Blue.svg" 
-              alt="Monexo" 
+            <img
+              src="/Logo_Blue_new.png"
+              alt="Monexo"
               className={`h-8 w-auto filter brightness-0 invert ${isRTL ? 'mr-auto' : ''}`}
             />
             <p className={`text-gray-300 leading-relaxed ${isRTL ? 'text-right' : ''}`}>

@@ -168,9 +168,9 @@ const ExchangeCalculator: React.FC<ExchangeCalculatorProps> = ({ language }) => 
     <div className="w-full max-w-sm mx-auto px-4" ref={calculatorRef}>
       <div className="bg-white rounded-2xl p-4 sm:p-6 shadow-2xl border border-gray-100">
         <div className={`text-center mb-4 ${isRTL ? 'text-right' : ''}`}>
-          <img 
-            src="/Logo_Blue.svg" 
-            alt="Monexo" 
+          <img
+            src="/Logo_Blue_new.png"
+            alt="Monexo"
             className="h-6 mx-auto mb-4"
           />
         </div>

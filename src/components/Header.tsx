@@ -17,7 +17,7 @@ const Header: React.FC<HeaderProps> = ({ language }) => {
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <img src="/Logo_Blue.svg" alt="Monexo" className="h-8 w-auto" />
+            <img src="/Logo_Blue_new.png" alt="Monexo" className="h-8 w-auto" />
             <div className="flex items-center space-x-4">
               <LanguageSelector currentLanguage={language} />
               <div className="h-10 w-32 bg-gray-200 rounded-xl animate-pulse"></div>
@@ -34,9 +34,9 @@ const Header: React.FC<HeaderProps> = ({ language }) => {
         <div className="flex items-center justify-between h-16">
           <div className={`flex items-center space-x-3 ${isRTL ? 'flex-row-reverse space-x-reverse' : ''}`}>
             <a href={`/${language}`} className="flex items-center">
-              <img 
-                src="/Logo_Blue.svg" 
-                alt="Monexo" 
+              <img
+                src="/Logo_Blue_new.png"
+                alt="Monexo"
                 className="h-8 w-auto hover:opacity-80 transition-opacity"
               />
             </a>
