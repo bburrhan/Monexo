@@ -27,10 +27,10 @@ const SEOHead: React.FC<SEOHeadProps> = ({ language }) => {
     "logo": "https://monexo.ai/Logo_Blue_new.png",
     "sameAs": [
       "https://wa.me/12083618992",
-      "https://www.instagram.com/monexo",
-      "https://www.facebook.com/monexo",
-      "https://www.linkedin.com/company/monexo",
-      "https://twitter.com/monexo"
+      "https://www.instagram.com/monexoai/",
+      "https://www.facebook.com/profile.php?id=61579607641266",
+      "https://www.linkedin.com/company/monexo-ai/",
+      "https://x.com/Monexo_ai"
     ],
     "serviceType": "Remittance facilitation via licensed partners",
     "areaServed": ["Asia", "Africa", "Middle East", "Europe", "North America"],
