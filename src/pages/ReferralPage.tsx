@@ -75,7 +75,7 @@ const ReferralPage: React.FC = () => {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage:
-              'linear-gradient(rgba(0, 30, 100, 0.72), rgba(0, 70, 160, 0.62)), url(https://images.pexels.com/photos/5473955/pexels-photo-5473955.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2)',
+              'linear-gradient(rgba(0, 30, 100, 0.72), rgba(0, 70, 160, 0.62)), url(https://images.pexels.com/photos/6147187/pexels-photo-6147187.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2)',
           }}
         />
         <div className="absolute inset-0 opacity-10">
