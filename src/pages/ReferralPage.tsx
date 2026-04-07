@@ -58,6 +58,12 @@ const ReferralPage: React.FC = () => {
             <Link to="/en">
               <img src="/Logo_Blue_new.png" alt="Monexo" className="h-8 w-auto hover:opacity-80 transition-opacity" />
             </Link>
+            <nav className="hidden md:flex items-center space-x-8">
+              <Link to="/en#how-it-works" className="text-gray-700 hover:text-brand-secondary transition-colors font-medium">How it Works</Link>
+              <Link to="/en#countries" className="text-gray-700 hover:text-brand-secondary transition-colors font-medium">Countries</Link>
+              <Link to="/en#pricing" className="text-gray-700 hover:text-brand-secondary transition-colors font-medium">Pricing</Link>
+              <Link to="/en#faq" className="text-gray-700 hover:text-brand-secondary transition-colors font-medium">Help</Link>
+            </nav>
             <button
               onClick={handleTopCTA}
               className="inline-flex items-center space-x-2 px-4 py-2 sm:px-6 sm:py-3 rounded-xl font-semibold text-white bg-green-500 hover:bg-green-600 transition-all transform hover:scale-105 shadow-lg text-sm sm:text-base"
