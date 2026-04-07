@@ -102,7 +102,7 @@ const ReferralPage: React.FC = () => {
           </h1>
 
           <p className="text-xl sm:text-2xl text-brand-muted leading-relaxed mb-10 max-w-2xl mx-auto">
-            Share your unique referral code with friends and family. When they complete their first transfer of 100 AED or more, you both get 10 AED added to your next transfer — automatically.
+            Share your unique referral code with friends and family. When they complete their first transfer, you both get 10 AED added to your next transfer, automatically.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
