@@ -126,7 +126,7 @@ const ReferralPage: React.FC = () => {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">How It Works</h2>
-            <p className="text-xl text-gray-500">Three simple steps — the bot handles everything automatically.</p>
+            <p className="text-xl text-gray-500">Three simple steps, we handle everything automatically.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 relative">
