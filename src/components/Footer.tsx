@@ -80,6 +80,7 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
               <li><Link to={`/${language}#pricing`} className="text-gray-300 hover:text-white transition-colors">{t.footer.sections.product.pricing}</Link></li>
               <li><Link to={`/${language}#countries`} className="text-gray-300 hover:text-white transition-colors">{t.footer.sections.product.countries}</Link></li>
               <li><Link to={`/${language}#calculator`} className="text-gray-300 hover:text-white transition-colors">{t.footer.sections.product.exchangeRates}</Link></li>
+              <li><Link to="/referral" className="text-gray-300 hover:text-white transition-colors">Refer &amp; Earn</Link></li>
             </ul>
           </div>
 

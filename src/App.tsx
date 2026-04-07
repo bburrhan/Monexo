@@ -5,6 +5,7 @@ import LanguagePage from './pages/LanguagePage';
 import DownloadPage from './pages/DownloadPage';
 import TermsPage from './pages/TermsPage';
 import PrivacyPage from './pages/PrivacyPage';
+import ReferralPage from './pages/ReferralPage';
 import { languages } from './data/languages';
 
 function App() {
@@ -51,6 +52,9 @@ function App() {
             />
           ))}
           
+          {/* Referral program landing page */}
+          <Route path="/referral" element={<ReferralPage />} />
+
           {/* Catch all other routes and redirect to English */}
           <Route path="*" element={<Navigate to="/en\" replace />} />
         </Routes>
