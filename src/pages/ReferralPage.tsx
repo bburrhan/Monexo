@@ -41,11 +41,13 @@ const ReferralPage: React.FC = () => {
 
   const handleTopCTA = () => {
     trackAddToCart({ contentName: 'Referral Program - Hero CTA' });
+    gtag_report_conversion();
     window.open(getWhatsAppURL(WHATSAPP_MESSAGE_TOP), '_blank', 'noopener,noreferrer');
   };
 
   const handleBottomCTA = () => {
     trackAddToCart({ contentName: 'Referral Program - Bottom CTA' });
+    gtag_report_conversion();
     window.open(getWhatsAppURL(WHATSAPP_MESSAGE_BOTTOM), '_blank', 'noopener,noreferrer');
   };
 

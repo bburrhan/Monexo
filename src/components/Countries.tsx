@@ -296,7 +296,7 @@ const Countries: React.FC<CountriesProps> = ({ language }) => {
             href={getWhatsAppURL(t.whatsappMessage)}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => trackAddToCart({ contentName: 'Money Transfer' })}
+            onClick={() => { trackAddToCart({ contentName: 'Money Transfer' }); gtag_report_conversion(); }}
             className={`inline-flex items-center space-x-3 bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition-colors font-medium shadow-lg ${isRTL ? 'flex-row-reverse space-x-reverse' : ''}`}
           >
             <MessageCircle size={20} />

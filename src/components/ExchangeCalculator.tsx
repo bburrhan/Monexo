@@ -312,11 +312,7 @@ const ExchangeCalculator: React.FC<ExchangeCalculatorProps> = ({ language }) => 
             href={getWhatsAppURL(t.whatsappMessage)}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => trackAddToCart({
-              contentName: 'Money Transfer',
-              currency: currency,
-              value: parseFloat(amount) || 0,
-            })}
+            onClick={() => { trackAddToCart({ contentName: 'Money Transfer', currency: currency, value: parseFloat(amount) || 0 }); gtag_report_conversion(); }}
             className={`w-full py-4 rounded-xl font-semibold transition-all duration-200 flex items-center justify-center space-x-3 bg-green-500 text-white hover:bg-green-600 active:bg-green-700 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl ${isRTL ? 'flex-row-reverse space-x-reverse' : ''}`}
           >
             <MessageCircle size={22} />

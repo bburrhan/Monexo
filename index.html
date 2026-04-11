@@ -38,6 +38,22 @@
       gtag('config', 'AW-17490519505');
     </script>
     
+    <!-- Google Ads Conversion Tracking -->
+    <script>
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+          'send_to': 'AW-17490519505/rOskCPrqtpocENHLkJRB',
+          'event_callback': callback
+        });
+        return false;
+      }
+    </script>
+
     <!-- Facebook Pixel -->
     <script>
       !function(f,b,e,v,n,t,s)
