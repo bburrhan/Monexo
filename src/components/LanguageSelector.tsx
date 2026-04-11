@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { ChevronDown, Globe } from 'lucide-react';
 import { languages } from '../data/languages';
+import { trackLanguageChange } from '../utils/analytics';
 
 interface LanguageSelectorProps {
   currentLanguage: string;
@@ -32,6 +33,8 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ currentLanguage }) 
   const handleLanguageChange = (langCode: string) => {
     const pathSegments = location.pathname.split('/').filter(Boolean);
     const subPage = pathSegments.length > 1 ? pathSegments[1] : '';
+
+    trackLanguageChange(currentLanguage, langCode);
 
     if (subPage) {
       navigate(`/${langCode}/${subPage}`);

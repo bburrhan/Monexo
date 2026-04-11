@@ -3,6 +3,7 @@ import LanguageSelector from './LanguageSelector';
 import { useTranslations } from '../hooks/useTranslations';
 import { getWhatsAppURL } from '../utils/whatsapp';
 import { trackAddToCart } from '../utils/pixel';
+import { trackWhatsAppClick } from '../utils/analytics';
 
 interface HeaderProps {
   language: string;
@@ -65,7 +66,11 @@ const Header: React.FC<HeaderProps> = ({ language }) => {
                 href={getWhatsAppURL(t.whatsappMessage)}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => { trackAddToCart({ contentName: 'Money Transfer' }); gtag_report_conversion(); }}
+                onClick={() => {
+                  trackAddToCart({ contentName: 'Money Transfer' });
+                  trackWhatsAppClick({ location: 'header', language });
+                  gtag_report_conversion();
+                }}
                 className={`inline-flex items-center justify-center space-x-2 px-4 py-2 sm:px-6 sm:py-3 rounded-xl font-semibold transition-all transform hover:scale-105 shadow-lg text-white bg-green-500 hover:bg-green-600 text-sm sm:text-base ${isRTL ? 'flex-row-reverse space-x-reverse' : ''}`}
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="flex-shrink-0">

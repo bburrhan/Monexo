@@ -3,6 +3,7 @@ import { MessageCircle, ChevronDown } from 'lucide-react';
 import { useTranslations } from '../hooks/useTranslations';
 import { getWhatsAppURL } from '../utils/whatsapp';
 import { trackAddToCart } from '../utils/pixel';
+import { trackWhatsAppClick, trackCalculatorInteraction } from '../utils/analytics';
 
 interface ExchangeCalculatorProps {
   language: string;
@@ -202,6 +203,7 @@ const ExchangeCalculator: React.FC<ExchangeCalculatorProps> = ({ language }) => 
                       setFromCountry(country.code);
                       setCurrency(country.currency);
                       setShowFromDropdown(false);
+                      trackCalculatorInteraction({ field: 'from_currency', currency: country.currency });
                     }}
                     className={`w-full flex items-center p-4 hover:bg-gray-50 active:bg-gray-100 transition-colors first:rounded-t-xl last:rounded-b-xl border-b border-gray-100 last:border-b-0 ${isRTL ? 'flex-row-reverse text-right' : 'text-left'}`}
                   >
@@ -224,7 +226,10 @@ const ExchangeCalculator: React.FC<ExchangeCalculatorProps> = ({ language }) => 
               <input
                 type="number"
                 value={amount}
-                onChange={(e) => setAmount(e.target.value)}
+                onChange={(e) => {
+                  setAmount(e.target.value);
+                  trackCalculatorInteraction({ field: 'amount', amount: parseFloat(e.target.value) || 0, currency });
+                }}
                 className={`w-20 px-0 py-1 bg-transparent border-0 focus:ring-0 focus:outline-none text-lg font-bold text-gray-900 ${isRTL ? 'text-right' : 'text-right'}`}
                 placeholder="0"
                 inputMode="numeric"
@@ -262,6 +267,7 @@ const ExchangeCalculator: React.FC<ExchangeCalculatorProps> = ({ language }) => 
                     onClick={() => {
                       setToCountry(country.code);
                       setShowToDropdown(false);
+                      trackCalculatorInteraction({ field: 'to_country', to_country: country.code, currency });
                     }}
                     className={`w-full flex items-center p-4 hover:bg-gray-50 active:bg-gray-100 transition-colors first:rounded-t-xl last:rounded-b-xl border-b border-gray-100 last:border-b-0 ${isRTL ? 'flex-row-reverse text-right' : 'text-left'}`}
                   >
@@ -312,7 +318,11 @@ const ExchangeCalculator: React.FC<ExchangeCalculatorProps> = ({ language }) => 
             href={getWhatsAppURL(t.whatsappMessage)}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => { trackAddToCart({ contentName: 'Money Transfer', currency: currency, value: parseFloat(amount) || 0 }); gtag_report_conversion(); }}
+            onClick={() => {
+              trackAddToCart({ contentName: 'Money Transfer', currency: currency, value: parseFloat(amount) || 0 });
+              trackWhatsAppClick({ location: 'calculator', language, currency, transfer_amount: parseFloat(amount) || 0 });
+              gtag_report_conversion();
+            }}
             className={`w-full py-4 rounded-xl font-semibold transition-all duration-200 flex items-center justify-center space-x-3 bg-green-500 text-white hover:bg-green-600 active:bg-green-700 transform hover:scale-[1.02] active:scale-[0.98] shadow-lg hover:shadow-xl ${isRTL ? 'flex-row-reverse space-x-reverse' : ''}`}
           >
             <MessageCircle size={22} />

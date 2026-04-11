@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import LanguagePage from './pages/LanguagePage';
 import DownloadPage from './pages/DownloadPage';
@@ -7,11 +7,21 @@ import TermsPage from './pages/TermsPage';
 import PrivacyPage from './pages/PrivacyPage';
 import ReferralPage from './pages/ReferralPage';
 import { languages } from './data/languages';
+import { trackPageView } from './utils/analytics';
+
+function RouteTracker() {
+  const location = useLocation();
+  useEffect(() => {
+    trackPageView(location.pathname + location.search, document.title);
+  }, [location]);
+  return null;
+}
 
 function App() {
   return (
     <HelmetProvider>
       <Router>
+        <RouteTracker />
         <Routes>
           {/* Redirect root to English */}
           <Route path="/" element={<Navigate to="/en\" replace />} />

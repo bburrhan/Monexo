@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Gift, Users, ArrowRight, ChevronDown, ChevronUp, CheckCircle, Star } from 'lucide-react';
 import { getWhatsAppURL } from '../utils/whatsapp';
 import { trackAddToCart } from '../utils/pixel';
+import { trackWhatsAppClick, trackFAQExpand } from '../utils/analytics';
 
 const WHATSAPP_MESSAGE_TOP = 'Hi! I want to start sending money with Monexo and get my referral code.';
 const WHATSAPP_MESSAGE_BOTTOM = 'Hi! I came from the referral program page and I want to join Monexo.';
@@ -41,12 +42,14 @@ const ReferralPage: React.FC = () => {
 
   const handleTopCTA = () => {
     trackAddToCart({ contentName: 'Referral Program - Hero CTA' });
+    trackWhatsAppClick({ location: 'referral_hero' });
     gtag_report_conversion();
     window.open(getWhatsAppURL(WHATSAPP_MESSAGE_TOP), '_blank', 'noopener,noreferrer');
   };
 
   const handleBottomCTA = () => {
     trackAddToCart({ contentName: 'Referral Program - Bottom CTA' });
+    trackWhatsAppClick({ location: 'referral_bottom' });
     gtag_report_conversion();
     window.open(getWhatsAppURL(WHATSAPP_MESSAGE_BOTTOM), '_blank', 'noopener,noreferrer');
   };
@@ -228,7 +231,13 @@ const ReferralPage: React.FC = () => {
                 className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border border-gray-100"
               >
                 <button
-                  onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                  onClick={() => {
+                    const nextIndex = openIndex === index ? null : index;
+                    setOpenIndex(nextIndex);
+                    if (nextIndex !== null) {
+                      trackFAQExpand({ question_index: index, section: 'referral' });
+                    }
+                  }}
                   className="w-full px-6 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
                 >
                   <h3 className="text-lg font-semibold text-gray-900 pr-4">{faq.question}</h3>

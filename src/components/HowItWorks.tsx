@@ -3,6 +3,7 @@ import { MessageCircle, CreditCard as Edit, Send } from 'lucide-react';
 import { useTranslations } from '../hooks/useTranslations';
 import { getWhatsAppURL } from '../utils/whatsapp';
 import { trackAddToCart } from '../utils/pixel';
+import { trackWhatsAppClick } from '../utils/analytics';
 
 interface HowItWorksProps {
   language: string;
@@ -102,7 +103,11 @@ const HowItWorks: React.FC<HowItWorksProps> = ({ language }) => {
             href={getWhatsAppURL(t.whatsappMessage)}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => { trackAddToCart({ contentName: 'Money Transfer' }); gtag_report_conversion(); }}
+            onClick={() => {
+              trackAddToCart({ contentName: 'Money Transfer' });
+              trackWhatsAppClick({ location: 'how_it_works', language });
+              gtag_report_conversion();
+            }}
             className={`inline-flex items-center justify-center space-x-3 px-8 py-4 rounded-xl font-semibold text-lg text-white transition-all transform hover:scale-105 shadow-lg bg-green-500 hover:bg-green-600 ${isRTL ? 'flex-row-reverse space-x-reverse' : ''}`}
           >
             <MessageCircle size={24} />

@@ -3,6 +3,7 @@ import { Shield, Award, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useTranslations } from '../hooks/useTranslations';
 import { getWhatsAppURL } from '../utils/whatsapp';
+import { trackWhatsAppClick } from '../utils/analytics';
 
 interface FooterProps {
   language: string;
@@ -90,7 +91,7 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
             <ul className="space-y-3">
               <li><a href="mailto:support@monexo.ai" className="text-gray-300 hover:text-white transition-colors">{t.footer.sections.support.helpCenter}</a></li>
               <li><a href="mailto:support@monexo.ai" className="text-gray-300 hover:text-white transition-colors">{t.footer.sections.support.contactUs}</a></li>
-              <li><a href={getWhatsAppURL('Hi, I would like to track my transfer.')} target="_blank" rel="noopener noreferrer" onClick={() => gtag_report_conversion()} className="text-gray-300 hover:text-white transition-colors">{t.footer.sections.support.trackTransfer}</a></li>
+              <li><a href={getWhatsAppURL('Hi, I would like to track my transfer.')} target="_blank" rel="noopener noreferrer" onClick={() => { trackWhatsAppClick({ location: 'footer', language }); gtag_report_conversion(); }} className="text-gray-300 hover:text-white transition-colors">{t.footer.sections.support.trackTransfer}</a></li>
               <li><a href="mailto:support@monexo.ai" className="text-gray-300 hover:text-white transition-colors">{t.footer.sections.support.reportIssue}</a></li>
             </ul>
           </div>
