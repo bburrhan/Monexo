@@ -12,12 +12,13 @@ import { detectDeviceLanguage, isValidLanguageCode } from './utils/languageDetec
 
 function LanguageRedirect() {
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const stored = localStorage.getItem('monexo-language');
     const lang = (stored && isValidLanguageCode(stored)) ? stored : detectDeviceLanguage();
-    navigate(`/${lang}`, { replace: true });
-  }, [navigate]);
+    navigate(`/${lang}${location.search}${location.hash}`, { replace: true });
+  }, [navigate, location]);
 
   return null;
 }
