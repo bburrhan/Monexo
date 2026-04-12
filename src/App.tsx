@@ -7,13 +7,36 @@ import TermsPage from './pages/TermsPage';
 import PrivacyPage from './pages/PrivacyPage';
 import ReferralPage from './pages/ReferralPage';
 import { languages } from './data/languages';
-import { trackPageView } from './utils/analytics';
+import { trackPageView, trackScrollDepth } from './utils/analytics';
 
 function RouteTracker() {
   const location = useLocation();
+
   useEffect(() => {
     trackPageView(location.pathname + location.search, document.title);
   }, [location]);
+
+  useEffect(() => {
+    const milestones = [25, 50, 75, 90, 100];
+    const fired = new Set<number>();
+
+    const handleScroll = () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      if (docHeight <= 0) return;
+      const pct = Math.round((scrollTop / docHeight) * 100);
+      for (const m of milestones) {
+        if (pct >= m && !fired.has(m)) {
+          fired.add(m);
+          trackScrollDepth(m);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [location]);
+
   return null;
 }
 
