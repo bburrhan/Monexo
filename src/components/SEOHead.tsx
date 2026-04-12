@@ -1,19 +1,35 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useTranslations } from '../hooks/useTranslations';
+import { languages } from '../data/languages';
 
 interface SEOHeadProps {
   language: string;
+  subPath?: string;
 }
 
-const SEOHead: React.FC<SEOHeadProps> = ({ language }) => {
+const localeMap: Record<string, string[]> = {
+  en: ['en', 'en-US'],
+  hi: ['hi', 'hi-IN'],
+  ur: ['ur', 'ur-PK'],
+  tl: ['tl', 'tl-PH', 'fil-PH'],
+  id: ['id', 'id-ID'],
+  vi: ['vi', 'vi-VN'],
+  bn: ['bn', 'bn-BD'],
+};
+
+const SEOHead: React.FC<SEOHeadProps> = ({ language, subPath = '' }) => {
   const { t, loading } = useTranslations(language);
+
+  const basePath = subPath ? `/${subPath}` : '';
+  const canonicalUrl = `https://monexo.ai/${language}${basePath}`;
 
   if (loading || !t) {
     return (
       <Helmet>
         <html lang={language} />
         <title>Monexo - Loading...</title>
+        <link rel="canonical" href={canonicalUrl} />
       </Helmet>
     );
   }
@@ -22,7 +38,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({ language }) => {
     "@context": "https://schema.org",
     "@type": "FinancialService",
     "name": "Monexo",
-    "description": "Zero‑fee remittances on WhatsApp. Fast, transparent and secure - processed through licensed financial partners.",
+    "description": "Zero\u2011fee remittances on WhatsApp. Fast, transparent and secure - processed through licensed financial partners.",
     "url": "https://monexo.ai/",
     "logo": "https://monexo.ai/Logo_Blue_new.png",
     "sameAs": [
@@ -56,45 +72,43 @@ const SEOHead: React.FC<SEOHeadProps> = ({ language }) => {
     <Helmet>
       <html lang={language} />
       <title>Send Money on WhatsApp - Always Free | Monexo</title>
-      <meta name="description" content="Zero‑fee remittances on WhatsApp. Fast, transparent and secure - processed through licensed financial partners." />
+      <meta name="description" content="Zero\u2011fee remittances on WhatsApp. Fast, transparent and secure - processed through licensed financial partners." />
       <meta name="keywords" content="remittance, money transfer, WhatsApp, zero fee, send money" />
-      
-      {/* Open Graph */}
+
       <meta property="og:title" content="Send Money on WhatsApp - Always Free | Monexo" />
-      <meta property="og:description" content="Zero‑fee remittances on WhatsApp. Fast, transparent and secure - processed through licensed financial partners." />
+      <meta property="og:description" content="Zero\u2011fee remittances on WhatsApp. Fast, transparent and secure - processed through licensed financial partners." />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://monexo.ai/" />
+      <meta property="og:url" content={canonicalUrl} />
       <meta property="og:image" content="https://monexo.ai/Logo_Blue_new.png" />
-      <meta property="og:locale" content={language} />
-      
-      {/* Twitter */}
+      <meta property="og:locale" content={localeMap[language]?.[0] ?? language} />
+
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="Send Money on WhatsApp - Always Free | Monexo" />
-      <meta name="twitter:description" content="Zero‑fee remittances on WhatsApp. Fast, transparent and secure - processed through licensed financial partners." />
+      <meta name="twitter:description" content="Zero\u2011fee remittances on WhatsApp. Fast, transparent and secure - processed through licensed financial partners." />
       <meta name="twitter:image" content="https://monexo.ai/Logo_Blue_new.png" />
-      
-      {/* Structured Data */}
+
       <script type="application/ld+json">
         {JSON.stringify(structuredData)}
       </script>
-      
-      {/* Preconnect to external domains */}
+
       <link rel="preconnect" href="https://images.pexels.com" />
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       <link rel="preconnect" href="https://www.googletagmanager.com" />
-      
-      {/* Canonical URL */}
-      <link rel="canonical" href={`https://monexo.ai/${language}`} />
-      
-      {/* Language alternates */}
-      <link rel="alternate" hrefLang="en" href="https://monexo.ai/en" />
-      <link rel="alternate" hrefLang="hi" href="https://monexo.ai/hi" />
-      <link rel="alternate" hrefLang="ur" href="https://monexo.ai/ur" />
-      <link rel="alternate" hrefLang="tl" href="https://monexo.ai/tl" />
-      <link rel="alternate" hrefLang="id" href="https://monexo.ai/id" />
-      <link rel="alternate" hrefLang="vi" href="https://monexo.ai/vi" />
-      <link rel="alternate" hrefLang="bn" href="https://monexo.ai/bn" />
+
+      <link rel="canonical" href={canonicalUrl} />
+
+      <link rel="alternate" hrefLang="x-default" href={`https://monexo.ai/en${basePath}`} />
+      {languages.flatMap((lang) =>
+        (localeMap[lang.code] ?? [lang.code]).map((locale) => (
+          <link
+            key={`${lang.code}-${locale}`}
+            rel="alternate"
+            hrefLang={locale}
+            href={`https://monexo.ai/${lang.code}${basePath}`}
+          />
+        ))
+      )}
     </Helmet>
   );
 };

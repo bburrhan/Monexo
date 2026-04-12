@@ -28,11 +28,11 @@ const PrivacyPage: React.FC<PrivacyPageProps> = ({ language }) => {
 
   return (
     <div className={`min-h-screen bg-white ${isRTL ? 'rtl' : ''}`}>
-      <SEOHead language={language} />
+      <SEOHead language={language} subPath="privacy" />
       <Helmet>
         <meta property="og:title" content="Monexo Privacy Policy" />
         <meta property="og:description" content="Learn how we collect, use, and protect your data. Read our commitment to transparency and trust." />
-        <meta property="og:url" content="https://monexo.ai/en/privacy" />
+        <meta property="og:url" content={`https://monexo.ai/${language}/privacy`} />
         <meta property="og:image" content="https://res.cloudinary.com/drr0qosem/image/upload/v1765550071/Screenshot_2025-12-12_at_17.30.13_r1jdo5.png" />
       </Helmet>
       <Header language={language} />

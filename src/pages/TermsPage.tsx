@@ -28,11 +28,11 @@ const TermsPage: React.FC<TermsPageProps> = ({ language }) => {
 
   return (
     <div className={`min-h-screen bg-white ${isRTL ? 'rtl' : ''}`}>
-      <SEOHead language={language} />
+      <SEOHead language={language} subPath="terms" />
       <Helmet>
         <meta property="og:title" content="Monexo Terms of Use" />
         <meta property="og:description" content="Read the Terms of Use governing your access to and use of Monexo's remittance services via WhatsApp." />
-        <meta property="og:url" content="https://monexo.ai/en/terms" />
+        <meta property="og:url" content={`https://monexo.ai/${language}/terms`} />
       </Helmet>
       <Header language={language} />
 

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import LanguagePage from './pages/LanguagePage';
 import DownloadPage from './pages/DownloadPage';
@@ -8,6 +8,19 @@ import PrivacyPage from './pages/PrivacyPage';
 import ReferralPage from './pages/ReferralPage';
 import { languages } from './data/languages';
 import { trackPageView, trackScrollDepth } from './utils/analytics';
+import { detectDeviceLanguage, isValidLanguageCode } from './utils/languageDetect';
+
+function LanguageRedirect() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const stored = localStorage.getItem('monexo-language');
+    const lang = (stored && isValidLanguageCode(stored)) ? stored : detectDeviceLanguage();
+    navigate(`/${lang}`, { replace: true });
+  }, [navigate]);
+
+  return null;
+}
 
 function RouteTracker() {
   const location = useLocation();
@@ -46,8 +59,8 @@ function App() {
       <Router>
         <RouteTracker />
         <Routes>
-          {/* Redirect root to English */}
-          <Route path="/" element={<Navigate to="/en\" replace />} />
+          {/* Redirect root based on device language */}
+          <Route path="/" element={<LanguageRedirect />} />
           
           {/* Language-specific routes */}
           {languages.map((language) => (
@@ -88,8 +101,8 @@ function App() {
           {/* Referral program landing page */}
           <Route path="/referral" element={<ReferralPage />} />
 
-          {/* Catch all other routes and redirect to English */}
-          <Route path="*" element={<Navigate to="/en\" replace />} />
+          {/* Catch all other routes and redirect based on device language */}
+          <Route path="*" element={<LanguageRedirect />} />
         </Routes>
       </Router>
     </HelmetProvider>
